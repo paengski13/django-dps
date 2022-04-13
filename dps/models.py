@@ -7,7 +7,7 @@ from django.db import models
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from six import python_2_unicode_compatible
-from django.utils.six import text_type
+from six import text_type
 
 
 def make_uuid():
