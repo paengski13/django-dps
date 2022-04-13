@@ -2,7 +2,7 @@ import warnings
 
 from django.shortcuts import get_object_or_404, redirect
 from django.http import Http404, HttpResponseBadRequest
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.urls import reverse
 
 from .models import Transaction
@@ -94,7 +94,7 @@ def transaction_result(request, token):
     transaction = get_object_or_404(Transaction, secret=token,
                                     status__in=[Transaction.SUCCESSFUL,
                                                 Transaction.FAILED])
-    return render_to_response("dps/transaction_result.html", {
+    return render("dps/transaction_result.html", {
         "request": request,
         "transaction": transaction,
         "success": (transaction.status == Transaction.SUCCESSFUL),
