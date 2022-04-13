@@ -1,8 +1,8 @@
 from xml.etree import cElementTree as ElementTree
 from django.conf import settings
 from django.http import HttpResponseRedirect
-from django.utils.six import text_type
-from django.utils.six.moves.urllib.request import Request, urlopen
+from six import text_type
+from six.moves.urllib.request import Request, urlopen
 from django.core.urlresolvers import reverse
 
 from .models import Transaction
